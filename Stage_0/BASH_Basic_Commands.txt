@@ -1,0 +1,40 @@
+pwd
+cd hackbio/Stage_0_Task/
+ls
+# Print your name
+echo "Muniru Elijah"
+# Create a folder titled your name
+mkdir muniru_elijah
+# Create another new directory titled biocomputing and change to that directory with one line of command
+mkdir biocomputing && cd biocomputing
+# Download these 3 files:
+wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.fna
+wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.gbk
+wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.gbk
+ls
+# Move the .fna file to the folder titled your name
+mv wildtype.fna ../muniru_elijah/
+ls ../muniru_elijah/
+ls
+# Delete the duplicate gbk file
+rm wildtype.gbk.1
+ls
+# Confirm if the .fna file is mutant or wild type (tatatata vs tata)
+cd ../muniru_elijah/
+grep 'tatata' wildtype.fna
+# If mutant, print all matching lines into a new file
+grep 'tatata' wildtype.fna > mutants.txt
+ls
+# Count number of lines (excluding header) in the .gbk file
+wc -l ../biocomputing/wildtype.gbk
+# Print the sequence length of the .gbk file. (Use the LOCUS tag in the first line)
+cd ../biocomputing/
+awk '/LOCUS/ {print $3}' wildtype.gbk
+# Print the source organism of the .gbk file. (Use the SOURCE tag in the first line)
+awk '/SOURCE/ {print $2, $3}' wildtype.gbk
+# List all the gene names of the .gbk file. Hint {grep '/gene='}
+grep '/gene=' wildtype.gbk
+# Clear your terminal space and print all commands used today
+history
+# List the files in the two folders
+ls ../biocomputing/ ../muniru_elijah/
