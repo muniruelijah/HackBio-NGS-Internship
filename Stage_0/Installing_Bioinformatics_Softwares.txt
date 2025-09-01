@@ -1,0 +1,28 @@
+pwd
+cd hackbio/
+# Activate your base conda environment
+conda activate base
+# Create a conda environment named funtools
+conda create --name funtools
+# Activate the funtools environment
+conda activate funtools
+# Install Figlet using conda or apt-get
+conda install pyfiglet
+# Run figlet <your name>
+pyfiglet muniru_elijah
+# Install bwa through the bioconda channel
+conda install bioconda::bwa
+# Install blast through the bioconda channel
+conda install bioconda::blast
+# Install samtools through the bioconda channel
+conda install bioconda::samtools
+# Install bedtools through the bioconda channel
+conda install bioconda::bedtools
+# Install spades.py through the bioconda channel
+conda install bioconda::spades.py
+# Install bcftools through the bioconda channel
+conda install bioconda::bcftools
+# Install fastp through the bioconda channel
+conda install bioconda::fastp
+# Install multiqc through the bioconda channel
+conda install bioconda::multiqc
